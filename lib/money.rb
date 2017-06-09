@@ -1,6 +1,8 @@
 require 'net/http'
 require 'nori'
+require 'digest/md5'
 require 'money/version'
+require 'money/cache/file'
 require 'money/bank/base'
 require 'money/bank/dummy'
 require 'money/bank/crb'

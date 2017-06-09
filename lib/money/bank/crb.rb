@@ -5,6 +5,13 @@ module Money
 
       def rates(date = nil)
         date ||= Date.today
+        key = "crb_#{date}"
+        Money::Cache::File.get_or_set(key) { call_api(date) }
+      end
+
+      private
+
+      def call_api(date)
         rates_xml = Net::HTTP.get(URI.parse(ENDPOINT % { d: date.strftime("%d.%m.%Y") }))
 
         Nori.new.parse(rates_xml).fetch('ValCurs').fetch('Valute').each do |x|
