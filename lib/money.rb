@@ -1,7 +1,9 @@
-require "money/version"
-require "money/bank/base"
-require "money/bank/dummy"
-require "money/bank/crb"
+require 'net/http'
+require 'nori'
+require 'money/version'
+require 'money/bank/base'
+require 'money/bank/dummy'
+require 'money/bank/crb'
 
 module Money
   class Coin

@@ -1,8 +1,8 @@
 module Money
   module Bank
     class Dummy < Base
-      def fetch_rates
-        {}
+      def rates
+        @rates
       end
     end
   end

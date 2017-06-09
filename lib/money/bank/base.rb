@@ -1,12 +1,12 @@
 module Money
   module Bank
     class Base
-      def self.singleton
-        @singleton ||= self.new
+      def initialize
+        @rates = {}
       end
 
-      def initialize
-        @rates = fetch_rates
+      def self.singleton
+        @singleton ||= self.new
       end
 
       def add_rate(from, to, rate)
@@ -14,7 +14,7 @@ module Money
       end
 
       def rate(from, to)
-        @rates["#{from}#{to}"]
+        rates.fetch("#{from}#{to}")
       end
     end
   end
