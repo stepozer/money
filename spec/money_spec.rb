@@ -81,4 +81,16 @@ describe Money do
       expect((Money::Coin.new(1.1, 'USD') - Money::Coin.new(50, 'RUB', bank)).to_s).to eql('0.1 USD')
     end
   end
+
+  describe '.*' do
+    it 'multiply' do
+      expect((Money::Coin.new(1.2, 'USD') * 3).to_s).to eql('3.6 USD')
+    end
+  end
+
+  describe './' do
+    it 'multiply' do
+      expect((Money::Coin.new(2.4, 'USD') / 2).to_s).to eql('1.2 USD')
+    end
+  end
 end

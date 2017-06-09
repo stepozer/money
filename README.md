@@ -14,10 +14,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install money
-
 ## Usage
 
 ``` ruby
@@ -47,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/money.
+Bug reports and pull requests are welcome on GitHub at https://github.com/stepozer/money.
 
 
 ## License

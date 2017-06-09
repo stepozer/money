@@ -39,6 +39,14 @@ module Money
       self.class.new((amount - money.amount), currency)
     end
 
+    def *(m_amount)
+      self.class.new((amount * m_amount), currency)
+    end
+
+    def /(m_amount)
+      self.class.new((amount / m_amount), currency)
+    end
+
     def self.default_bank
       Money::Bank::Cbr.singleton
     end
