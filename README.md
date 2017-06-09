@@ -1,15 +1,13 @@
 # Money
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/money`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Library for money and currency conversion.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'money'
+gem 'money', :git => 'git://github.com/stepozer/money.git'
 ```
 
 And then execute:
@@ -22,7 +20,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+``` ruby
+require 'money'
+
+# 10.00 USD
+money = Money::Coin.new(1000, "USD")
+money.amount    #=> 1000
+money.currency  #=> "USD"
+
+# Arithmetic operations
+Money::Coin.new(1000, "USD") + Money::Coin.new(500, "USD") #=> Money::Coin.new(1500, "USD")
+Money::Coin.new(1000, "USD") - Money::Coin.new(200, "USD") #=> Money::Coin.new(800, "USD")
+Money::Coin.new(1000, "USD") / 5                           #=> Money::Coin.new(200, "USD")
+Money::Coin.new(1000, "USD") * 5                           #=> Money::Coin.new(5000, "USD")
+
+# Currency conversions
+Money::Coin.new(1000, "USD").convert("EUR")
+Money::Coin.new(1000, "USD").convert_multiple(["EUR", "USD"])
+```
 
 ## Development
 
