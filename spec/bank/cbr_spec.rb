@@ -27,10 +27,10 @@ describe Money::Bank::Cbr do
         .to_return(status: 200, body: xml)
 
       rates = Money::Bank::Cbr.new.rates
-      expect(rates['RUBAUD']).to eql(43.0185)
-      expect(rates['AUDRUB'].round(2)).to eql((1 / 43.0185).round(2))
-      expect(rates['RUBHKD']).to eql(73.0914)
-      expect(rates['HKDRUB'].round(2)).to eql((1 / 73.0914).round(2))
+      expect(rates['RUBAUD'].round(2)).to eql((1 / 43.0185).round(2))
+      expect(rates['AUDRUB']).to eql(43.0185)
+      expect(rates['RUBHKD'].round(2)).to eql((1 / 73.0914 * 10).round(2))
+      expect(rates['HKDRUB']).to eql(73.0914 / 10)
     end
   end
 end
