@@ -31,8 +31,8 @@ Money::Coin.new(1000, "USD") / 5                           #=> Money::Coin.new(2
 Money::Coin.new(1000, "USD") * 5                           #=> Money::Coin.new(5000, "USD")
 
 # Currency conversions
-Money::Coin.new(1000, "USD").convert("EUR")
-Money::Coin.new(1000, "USD").convert_multiple(["EUR", "USD"])
+Money::Coin.new(1000, "RUB").convert("USD")
+Money::Coin.new(1000, "RUB").convert_multiple(["USD", "EUR"])
 ```
 
 ## Development
