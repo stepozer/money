@@ -19,7 +19,7 @@ And then execute:
 ``` ruby
 require 'money'
 
-# 10.00 USD
+# Initialization
 money = Money::Coin.new(1000, "USD")
 money.amount    #=> 1000
 money.currency  #=> "USD"
@@ -29,6 +29,10 @@ Money::Coin.new(1000, "USD") + Money::Coin.new(500, "USD") #=> Money::Coin.new(1
 Money::Coin.new(1000, "USD") - Money::Coin.new(200, "USD") #=> Money::Coin.new(800, "USD")
 Money::Coin.new(1000, "USD") / 5                           #=> Money::Coin.new(200, "USD")
 Money::Coin.new(1000, "USD") * 5                           #=> Money::Coin.new(5000, "USD")
+
+# Arithmetic operations for different currencies
+Money::Coin.new(1000, "USD") + Money::Coin.new(500, "RUB")
+Money::Coin.new(1000, "USD") - Money::Coin.new(500, "RUB")
 
 # Currency conversions
 Money::Coin.new(1000, "RUB").convert("USD")
